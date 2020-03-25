@@ -1,0 +1,91 @@
+[data-menu="button"] {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    [data-menu="button"] {
+        display: flex;
+        background: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+        align-items: center;
+        position: relative;
+        z-index: 300;
+    }
+
+    [data-menu="button"].active::before {
+        transform: rotate(90deg);
+    }
+
+    [data-menu="button"]::before {
+        margin-right: 4px;
+        content: '';
+        display: inline-block;
+        height: 2px;
+        width: 12px;
+        background: black;
+        box-shadow: 0 4px black, 0 -4px black;
+        transition: transform .3s;
+    }
+
+    #menu {
+        display: none;
+        position: absolute;
+        background: #0D0D0D;
+        width: 160px;
+        flex-direction: column;
+        z-index: 200;
+        padding: 60px 0 20px 0;
+        top: 0;
+    }
+
+    #menu.active {
+        display: block;
+    }
+
+    #menu li a:hover{
+    background: none;
+    }
+
+    #menu li:hover {
+        transform: scale(1);
+    }
+
+    .intro {
+        background: url(../img/intro-small.png) center center no-repeat;
+        background-size: cover;
+        padding: 200px;
+    }
+
+    .quem-somos img {
+        border-radius: 5px;
+        max-width: 40%;
+    }
+
+    .quem-somos > div{
+        margin: 0 10px;
+    }
+
+    .cardapio-item {
+        flex-direction: column;
+        margin: 0 10px;
+        padding-bottom: 70px;
+    }
+
+    .cardapio-item > div:last-child h3 {
+        margin-top: 10px;
+    }
+
+    .unidades-item {
+        flex-direction: column;
+        margin: 0 10px;
+    }
+
+    .unidades-item div:last-child {
+        margin-top: 70px;
+    }
+}
